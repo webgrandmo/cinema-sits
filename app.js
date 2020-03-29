@@ -26,6 +26,7 @@
     function chooseSeat(event) {
         checkIfSeat(event);
     }
+
     function checkIfSeat(e) {
         if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
             e.target.classList.toggle('selected');
@@ -33,10 +34,12 @@
 
         updateCountAndPrice();
     }
+
     function saveMovies(movieSelector, moviePrice) {
         localStorage.setItem('selectedMovieIndex', movieSelector);
         localStorage.setItem('selectedMoviePrice', moviePrice);
     }
+    
     function updateCountAndPrice() {
         const selectedSeats = document.querySelectorAll('.row .seat.selected');
         const selectedCount = selectedSeats.length;
